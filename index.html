@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="weatherheader">
+      <div class="locationsearch">
+        <input type="text" id="searchinput" placeholder="Search for a city " />
+        <button class="searchbutton">
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+            >
+              <path
+                d="M5.5 0C8.53757 0 11 2.46243 11 5.5C11 6.74832 10.5841 7.89951 9.88336 8.82257L14.0303 12.9697C14.3232 13.2626 14.3232 13.7374 14.0303 14.0303C13.7641 14.2966 13.3474 14.3208 13.0538 14.1029L12.9697 14.0303L8.82257 9.88336C7.89951 10.5841 6.74832 11 5.5 11C2.46243 11 0 8.53757 0 5.5C0 2.46243 2.46243 0 5.5 0ZM5.5 1.5C3.29086 1.5 1.5 3.29086 1.5 5.5C1.5 7.70914 3.29086 9.5 5.5 9.5C7.70914 9.5 9.5 7.70914 9.5 5.5C9.5 3.29086 7.70914 1.5 5.5 1.5Z"
+                fill="#919191"
+              ></path></svg
+          ></span>
+        </button>
+        <button id="button">Location</button>
+      </div>
+    </div>
+    <div class="weather-container">
+      <div class="grid">
+        <div class="grid-container">
+          <div class="weather-overview">
+            <div class="location-container">
+              <div class="location-name">
+                <h1 id="city"></h1>
+                <div class="background-image">
+                  <div class="overall-container">
+                    <div class="label-container">
+                      <div class="container-label">Current Weather</div>
+                      <div class="time-container"></div>
+                    </div>
+                    <div class="summary-container">
+                      <div class="current-temp">
+                        <div alt="" id="icon"></div>
+                        <div class="feelslike-container">
+                          <div id="summaryvalue"></div>
+                          <span id="units">&deg;F ugh</span>
+                          <div class="summary">
+                            <div class="caption"></div>
+                            <div class="feels-like">
+                              Feels Like
+                              <span id="feelslike"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="detail-container">
+                        <div class="detialitemgrid">
+                          <div class="item" id="air"></div>
+                          <div class="item" id="wind">
+                            <div class="detailitemgroup">
+                              <div class="detaillabel">
+                                <span>Wind</span>
+                                <div class="detailhints"></div>
+                              </div>
+                              <div class="windvalue"></div>
+                            </div>
+                          </div>
+                          <div class="item" id="humidity">
+                            <div class="detailitemgroup">
+                              <div class="detaillabel">
+                                <span>Humidity</span>
+                                <div class="detailhints"></div>
+                              </div>
+                              <div class="humidityvalue"></div>
+                            </div>
+                          </div>
+                          <div class="item" id="visibility">visibility</div>
+                          <div class="item" id="pressure">pressure</div>
+                          <div class="item" id="dewpoint">hi</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form id="container">
+      <h1 id="city"></h1>
+      <h6 id="time"></h6>
+    </form>
+    <p>H:89&deg; L:72&deg;</p>
+    <div class="row">
+      <h6>5 Day Forecast</h6>
+      <div class="col-2">
+        <p>
+          Wed
+          <br />
+          88&deg;
+        </p>
+      </div>
+      <div class="col-2">
+        <p>
+          Thurs
+          <br />
+          84&deg;
+        </p>
+      </div>
+      <div class="col-2">
+        <p>
+          Fri
+          <br />
+          84&deg;
+        </p>
+      </div>
+      <div class="col-2">
+        <p>
+          Sat
+          <br />
+          86&deg;
+        </p>
+      </div>
+      <div class="col-2">
+        <p>
+          Sun
+          <br />
+          84&deg;
+        </p>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
