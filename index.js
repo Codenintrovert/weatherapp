@@ -49,13 +49,13 @@ const handlesubmit = (e) => {
     axios.get(url).then(weather);
   };
   
-  const location = (e) => {
+  const locationFunction = (e) => {
     e.preventDefault();
     navigator.geolocation.getCurrentPosition(getCurrentLocation);
   };
   
   let button = document.querySelector("#button");
-  button.addEventListener("click", location);
+  button.addEventListener("click", locationFunction);
   
   citySearch("New York");
   
