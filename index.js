@@ -34,40 +34,40 @@ const formatDay = (timestamp) => {
   return days[day];
 };
 
-const displayForecast = (response) => {
+function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row>`;
+  // let days=["Monday", "Tuesday", "Wednesday", "Thursday","Friday"];
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5)
       forecastHTML =
         forecastHTML +
-        `
-      <div class="col-2">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-        <img
-          src="https://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
-          width="42"
-        />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
-            forecastDay.temp.max
-          )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
-            forecastDay.temp.min
-          )}° </span>
-        </div>
-      </div>
-  `;
-    }
+        ` <div class="container">
+        <div class="text-center"${forecastDay} id="forecast">
+            <div class="card-group"<img src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png">
+                <div class="card" style="width: 18rem">
+                    <h3 class="card-title">${formatDay(forecastDay.dt)}</h3>
+                    <h4 class="card-title"></h4>
+                    <p class="weather-size"><img src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"></p>
+                    <div class="card-body">
+                        <h4>${Math.round(forecastDay.temp.max)}° / ${Math.round(
+          forecastDay.temp.min
+        )}°</h4>
+                    </div>
+                </div>
+               
+                
+                
+    </div>`;
   });
-
-  forecastHTML = forecastHTML + `</div>`;
+  forecastHTML = forecastHTML + `<div>`;
   forecastElement.innerHTML = forecastHTML;
-};
+}
 
 function getForecast(coordinates) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -94,7 +94,7 @@ const displayTemperature = (response) => {
   dateElement.innerHTML = currentDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
@@ -112,7 +112,6 @@ const handleSubmit = (event) => {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 };
-
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
