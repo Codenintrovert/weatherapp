@@ -40,7 +40,7 @@ li:first-letter {
   border: 1px solid #dadde1;
   border-radius: 5px;
 
-  margin: 30px auto
+  margin: 30px auto;
 }
 
 .overview {
@@ -95,14 +95,16 @@ li:first-letter {
 }
 
 .text-center {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   padding: 0;
-
 }
 
-
-
+.footer {
+  text-align: center;
+  margin: 20px auto;
+  padding: 0;
+}
